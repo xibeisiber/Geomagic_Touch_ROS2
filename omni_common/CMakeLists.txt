@@ -23,6 +23,7 @@ find_package(omni_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(urdf REQUIRED)
 
 set(THIS_PACKAGE_DEPS
   geometry_msgs
@@ -31,6 +32,7 @@ set(THIS_PACKAGE_DEPS
   sensor_msgs
   std_msgs
   tf2_ros
+  urdf
 )
 set(THIS_PACKAGE_LIBS
   ${rclcpp_LIBRARIES}
@@ -95,10 +97,10 @@ install(
     omni_state
   DESTINATION lib/${PROJECT_NAME}
 )
-install(
-  DIRECTORY include/${PROJECT_NAME}/
-  DESTINATION include/${PROJECT_NAME}/
-)
+# install(
+#   DIRECTORY include/${PROJECT_NAME}/
+#   DESTINATION include/${PROJECT_NAME}/
+# )
 install(
   DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}
